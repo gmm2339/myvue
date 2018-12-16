@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<style>
+		.a{
+			background-color: red;
+		}
+		.b{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	<!-- v-for使用中，还有一些辅助属性
+	如果stus：数组	(item,index) in stus
+	:class = "index%2==0?"red":"green";
+	如果stus：对象	(value,key,index) in stus
+	 -->
+	<script>
+		let vue = new Vue({
+			el:"#app",
+			template:`
+			<!-- 模板中必须有个根节点 -->
+			<div>
+			<h1 v-show = "isShow">1</h1>
+			<h1 v-show = "isShow">2</h1>
+			<h1 v-show = "isShow">3</h1>
+			<h1 v-if = "isShow">4</h1>
+				<button @click = 'changeIsShow'>点我更酷</button>
+			</div>
+			`,
+			data:function(){
+				return {
+					isShow:true,
+				}
+				
+			},
+			methods:{
+				changeIsShow:function(){
+					//key是函数名，值是函数体
+					//this就是data data函数ruturn出去的对象
+					console.log(this);
+					this.isShow = !this.isShow;
+					console.log(this.isShow);
+				}
+				
+
+			}
+		})
+	</script>
+</body>
+</html>

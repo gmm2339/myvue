@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<style>
+		.a{
+			background-color: red;
+		}
+		.b{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	<!-- v-for使用中，还有一些辅助属性
+	如果stus：数组	(item,index) in stus
+	:class = "index%2==0?"red":"green";
+	如果stus：对象	(value,key,index) in stus
+	 -->
+	<script>
+		let vue = new Vue({
+			el:"#app",
+			template:`
+			<!-- 模板中必须有个根节点 -->
+			<div>
+				<ul>
+					<li v-for = "item in stus" :class="item.myclass">
+					{{item.name}}
+					</li>
+				</ul>
+				<hr />
+				<ul>
+					<li v-for = "(item,index) in stus" :class="item.myclass">
+					{{index}}
+					</li>
+				</ul>
+				<hr />
+				<ul>
+					<li v-for = "(val,key,index) in stus1" >
+					{{key}}:{{val}}
+					</li>
+				</ul>
+			</div>
+			`,
+			data:function(){
+				return {
+					stus:[{name:"zs",myclass: "a"},{name:"ls",myclass :"b"},{name:"ww",myclass:"a"}],
+					stus1:{"name":"zs","myclass":"a"},
+				}
+				
+			}
+		})
+	</script>
+</body>
+</html>

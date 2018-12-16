@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+	<!-- v-bind 属性绑定值 -->
+	<!-- v-model value属性绑定值，只能用在有value的标签中 -->
+	<!-- v-on 事件绑定 -->
+	<script>
+		let vue = new Vue({
+			el:"#app",
+			template:`
+			<!-- 模板中必须有个根节点 -->
+			<div>
+				<span v-text = "mytext"></span>
+				<span v-html = "myhtml"></span>
+				<button v-if="isExit">测试v-if</button>
+				<input v-bind:value="myvalue" :file="'text'" />
+				<!--必须使用具有value值的标签-->
+				<input v-model = "myvalue" :file="'text'" />
+				<button v-show = "myvalue=='xxxx'">我来了</button>
+			</div>
+			`,
+			data:function(){
+				return {
+					mytext:`<h1>
+								我等同于innertext
+							</h1>`,	
+					myhtml:`<h1>
+								我等同于innerhtml
+							</h1>`,
+					isExit:true,
+					myvalue:`123`,
+				}
+				
+			}
+		})
+	</script>
+</body>
+</html>

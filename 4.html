@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<style>
+		.a{
+			background-color: red;
+		}
+		.b{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	
+	<script>
+		let vue = new Vue({
+			el:"#app",
+			template:`
+			<!-- 模板中必须有个根节点 -->
+			<div>
+				<ul>
+					<li v-for = "item in stus" :class="item.myclass">
+					{{item.name}}
+					</li>
+				</ul>
+			</div>
+			`,
+			data:function(){
+				return {
+					stus:[{name:"zs",myclass: "a"},{name:"ls",myclass :"b"},{name:"ww",myclass:"a"}]
+				}
+				
+			}
+		})
+	</script>
+</body>
+</html>

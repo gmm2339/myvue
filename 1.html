@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+	let vue = new Vue({
+		//el发生行为的目的地
+		el:'#app',
+		//template表示要装载的模板
+		template:'<div><span>我是郭梦梦,{{text}}</span></div>',
+		//动态数据的声明
+		//也可以使用对象，常用函数
+		data:function(){ 
+			return {
+				//模板中使用的数据
+				text:'hello vue'
+			}
+		}
+	});
+</script>
+	
+</body>
+</html>
