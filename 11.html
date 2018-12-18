@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.3.7/lib/theme-chalk/index.css">
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-i18n/7.6.0/vue-i18n.min.js"></script>
+    <script src="https://unpkg.com/element-ui@2.3.7/lib/index.js"></script>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script>
+    var MHeader = {template:'<p>MHeader</p>'};
+    var MFooter = {template:'<p>MFooter</p>'};
+    var routers =[
+        {path:'/mheader',component:MHeader},
+        {path:'/mfooter',component:MFooter},
+
+    ];
+    //创建 router 实例，然后传 `routes` 配置
+    var router = new VueRouter({
+
+        routes:routers,
+    });
+    var vue = new Vue({
+        el:"#app",
+        router,
+        template:`
+        <div>
+        <router-link to="/mheader">to header</router-link>
+        <router-link to="/mfooter">to footer</router-link>
+        <div>
+
+            <router-view></router-view>
+        </div>
+        </div>
+        `,
+
+
+    });
+</script>
+</body>
+</html>
