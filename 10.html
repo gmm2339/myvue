@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.3.7/lib/theme-chalk/index.css">
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-i18n/7.6.0/vue-i18n.min.js"></script>
+    <script src="https://unpkg.com/element-ui@2.3.7/lib/index.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            template:`
+            <div>
+                <el-table :data="mydata">
+                <el-table-column prop="date" label = "日期">
+				</el-table-column>
+				<el-table-column prop="name" label = "姓名">
+				</el-table-column>
+				<el-table-column prop="address" label = "地址">
+				</el-table-column>
+                <el-table-column label = "操作">
+                <template slot-scope="scope">
+                    <el-button @click = "myalert(scope.row.name)">弹出弹框</el-button>
+                </template>
+                </el-table-column>
+                </el-table>
+
+            </div>
+            `,
+            data(){
+                return {
+                    mydata:[
+                        {
+                            date: '2016-05-03',
+                            name: '张三',
+                            address: '上海市普陀区金沙江路 1518 弄'
+                        },
+                        {
+                            date: '2016-05-03',
+                                name: '李四',
+                            address: '上海市普陀区金沙江路 1518 弄'
+                        },
+                        {
+                            date: '2016-05-03',
+                                name: '王五',
+                            address: '上海市普陀区金沙江路 1518 弄'
+                        }
+                    ]
+                }
+            },
+            methods:{
+                myalert:function(name){
+                    this.$alert("我是"+name+"行的弹窗");
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
