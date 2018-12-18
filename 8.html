@@ -29,27 +29,21 @@
 					</el-table-column>
 					<el-table-column  label = "操作">
 						<template slot-scope = "scope">
-							<el-button @click = edit(scope.$index,scope.row)>编辑
+							<el-button @click = "_edit(scope.$index,scope.row)">编辑
 							</el-button>
-							<el-button @click = delete(scope.$index,scope.row)>删除
-							</el-button>
+							<el-button @click = "_delete">删除</el-button>
 						</template>
-						
 					</el-table-column>
 				</el-table>
 			</div>
 			`,
 			methods:{
-				edit:function(index,row){
-					console.log(this);
-					console.dir(row);
-					console.log(index);
+				_edit:function(index,row){
+					
 					this.tabledata[index].date = row.date+index;
 				},
-				delete:function(index,row){
-					console.log("...................");
-					this.tabledata = this.tabledata.splice(index,1);
-					console.log(this.tabledata);
+				_delete:function(){
+					console.log(this);
 				},
 
 			},
