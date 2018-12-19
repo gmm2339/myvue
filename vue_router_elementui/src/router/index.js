@@ -16,4 +16,6 @@ menus.forEach((item) => {
   })
 })
 
-export default new Router({ routes })
+export default new Router({
+  routes
+})

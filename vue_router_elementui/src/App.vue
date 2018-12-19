@@ -3,7 +3,7 @@
 
     <el-container>
       <el-header>
-        <mheader class="header"></mheader>
+        <mheader class="header" :title="titleText"></mheader>
       </el-header>
       <el-container>
         <el-aside width="200px">
@@ -21,6 +21,11 @@ import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
 export default {
   name: 'App',
+  data  () {
+    return {
+      titleText: '我是动态的'
+    }
+  },
   components: {
     'navmenu': NavMenu,
     'mheader': Header

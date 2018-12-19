@@ -1,14 +1,15 @@
 <template>
     <el-row>
       <el-col :span="24">
-        <div class="header-wrap">Element</div>
+        <div class="header-wrap">{{title}}</div>
       </el-col>
     </el-row>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: ['title']
 }
 </script>
 
