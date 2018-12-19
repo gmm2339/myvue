@@ -23,7 +23,7 @@ export default {
   name: 'App',
   data  () {
     return {
-      titleText: '我是动态的'
+      titleText: 0
     }
   },
   components: {

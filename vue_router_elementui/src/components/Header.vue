@@ -9,7 +9,15 @@
 <script>
 export default {
   name: 'Header',
-  props: ['title']
+  // props 传递不带验证
+  // props: ['title']
+  // props 传值附带验证，此处验证传过来的值必须为Number，否则会在console 中报错
+  props: {
+    title: {
+      type: Number,
+      request: true
+    }
+  }
 }
 </script>
 
