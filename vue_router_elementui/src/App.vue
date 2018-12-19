@@ -3,7 +3,8 @@
 
     <el-container>
       <el-header>
-        <mheader class="header" :title="titleText"></mheader>
+        <!-- 自定义v-model="titleText"应用 此处将titleText 传递给子组件中的props -->
+        <mheader class="header"   v-model="titleText"></mheader>
       </el-header>
       <el-container>
         <el-aside width="200px">
@@ -23,7 +24,7 @@ export default {
   name: 'App',
   data  () {
     return {
-      titleText: 0
+      titleText: '我来测试自定义v-model'
     }
   },
   components: {
