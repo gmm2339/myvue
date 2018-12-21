@@ -1,7 +1,7 @@
 <template>
     <el-row>
       <el-col :span="24">
-        <button type="button" :value="dataFromOther" @click="handleClick">{{dataFromOther}}</button>
+        <span :value="dataFromOther" @click="handleClick">{{dataFromOther}}</span>
       </el-col>
     </el-row>
 </template>
@@ -56,6 +56,7 @@ export default {
 
 <style scoped>
 .header-wrap{
-width:100%;
+ padding:0;
+  margin:0;
 }
 </style>
